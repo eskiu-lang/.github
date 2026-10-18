@@ -1,0 +1,78 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/eskiu-lang/eskiu/main/assets/logo.png" alt="Eskiu" width="120">
+</p>
+
+<h3 align="center">The Eskiu Programming Language</h3>
+
+<p align="center">
+  A systems language with C-style syntax, Go-style interfaces and explicit memory.
+  <br>
+  <a href="https://eskiu-lang.org">Website</a> ·
+  <a href="https://eskiu-lang.org/docs/getting-started.html">Getting started</a> ·
+  <a href="https://eskiu-lang.org/the-book-of-eskiu.html">The Book of Eskiu</a> ·
+  <a href="https://github.com/eskiu-lang/eskiu/releases">Releases</a>
+</p>
+
+---
+
+Eskiu compiles to native code through LLVM and calls C libraries directly, with structs
+passed in each target's C ABI. It adds generics, structural interfaces, sum types with
+exhaustive `match`, closures, `defer`, slices, checked nullable pointers and `async`/`await`,
+and it has no garbage collector. A source file can also run as a script with
+`eskiuc run file.esk`.
+
+```c
+import <io>;
+import <fs>;
+import <string>;
+
+Result<int, string> count_lines(string path) {
+    String text = fs_read_text_result(path)?;
+    defer text.free();
+    int n = 0;
+    for (i in 0..text.len) {
+        if (text.data[i] == '\n') n++;
+    }
+    return Ok<int, string>(n);
+}
+
+Result<int, string> r = count_lines(argc > 1 ? argv[1] : "notes.txt");
+if (r.ok) printf("%d lines\n", r.value);
+else printf("error: %s\n", r.error);
+```
+
+## Install
+
+```bash
+curl -fsSL https://eskiu-lang.org/install.sh | sh     # macOS (Apple Silicon), Linux x86-64 and arm64
+brew install eskiu-lang/eskiu/eskiu                   # Homebrew
+```
+
+Windows x86-64 builds are on the [releases page](https://github.com/eskiu-lang/eskiu/releases).
+The compiler cross-compiles to 64-bit and 32-bit ARM and x86, including bare-metal targets.
+
+## Repositories
+
+| Repository | What it holds |
+|---|---|
+| [eskiu](https://github.com/eskiu-lang/eskiu) | The compiler, the standard library, the self-hosted compiler written in Eskiu, editor extensions, docs and tests |
+| [homebrew-eskiu](https://github.com/eskiu-lang/homebrew-eskiu) | The Homebrew tap |
+
+## Tools
+
+The `eskiuc` binary includes a formatter (`eskiuc fmt`), a REPL (`eskiuc repl`) and a package
+manager with git and path dependencies (`eskiuc new`, `add`, `build`, `test`). Editor support
+comes as an extension for VS Code and the editors built on it
+([Open VSX](https://open-vsx.org/extension/doranteseduardo/eskiu-language)) and through LSP4IJ
+for JetBrains IDEs.
+
+## In production
+
+[ReactVision](https://reactvision.xyz) rewrote the ViroReact renderer from C++ to Eskiu
+([case study](https://eskiu-lang.org/case-study-reactvision.html)), and Eskiu also runs an AR
+demo on the Nintendo 3DS ([case study](https://eskiu-lang.org/case-study-3ds.html)).
+
+## Contributing
+
+Issues and pull requests are welcome in the [main repository](https://github.com/eskiu-lang/eskiu).
+Eskiu is released under the MIT license.
