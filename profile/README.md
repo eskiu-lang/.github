@@ -67,12 +67,14 @@ Each package is added with `eskiuc add NAME --git https://github.com/eskiu-lang/
 | Package | What it does |
 |---|---|
 | [gpu](https://github.com/eskiu-lang/gpu) | GPU compute and rendering over WebGPU (Metal, Vulkan, DirectX 12), glTF and OBJ models with PBR, windows and input over SDL3, and machine learning: Llama inference from GGUF and safetensors (Llama 2 7B at 45 tokens per second on an M4 Pro) and training |
-| [onnx](https://github.com/eskiu-lang/onnx) | ONNX Runtime inference on the CPU, Core ML and WebGPU |
+| [onnx](https://github.com/eskiu-lang/onnx) | ONNX Runtime inference on the CPU, Core ML, NNAPI and WebGPU |
 | [tflite](https://github.com/eskiu-lang/tflite) | TensorFlow Lite inference with the XNNPACK, GPU and Core ML delegates |
 | [compress](https://github.com/eskiu-lang/compress) | Deflate, zlib, gzip and zip, written in Eskiu |
 | [audio](https://github.com/eskiu-lang/audio) | WAV files, a mixer and sound output over SDL3 |
 | [font](https://github.com/eskiu-lang/font) | TrueType fonts: glyph rendering, text layout and atlases |
+| [jni](https://github.com/eskiu-lang/jni) | Native methods for Android and the JVM, written in Eskiu with no C glue |
 | [nds](https://github.com/eskiu-lang/nds) | Nintendo DS file formats: ROMs, NARC archives, SDAT sound, 2D graphics and 3D textures |
+| vision (private for now) | Corners, optical flow, multi-view geometry and planes in pure Eskiu, from ReactVision's tinyvio; it opens together with tinyvio |
 
 ## Tools
 
@@ -84,9 +86,11 @@ for JetBrains IDEs.
 
 ## In production
 
-[ReactVision](https://reactvision.xyz) rewrote the ViroReact renderer from C++ to Eskiu
-([case study](https://eskiu-lang.org/case-study-reactvision.html)), and Eskiu also runs an AR
-demo on the Nintendo 3DS ([case study](https://eskiu-lang.org/case-study-3ds.html)).
+[ReactVision](https://reactvision.xyz) runs Eskiu in ViroReact: rendering modules moved from
+C++ use about 85% less memory, and the web AR tracker (tinyvio) and on-device object detection
+run on Eskiu engines that compute the same bits as the C++ they replaced
+([case study](https://eskiu-lang.org/case-study-reactvision.html)). For fun, Eskiu also runs an
+AR demo on the Nintendo 3DS ([case study](https://eskiu-lang.org/case-study-3ds.html)).
 
 ## Contributing
 
