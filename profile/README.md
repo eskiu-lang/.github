@@ -56,6 +56,7 @@ The compiler cross-compiles to 64-bit and 32-bit ARM and x86, including bare-met
 | Repository | What it holds |
 |---|---|
 | [eskiu](https://github.com/eskiu-lang/eskiu) | The compiler, the standard library, the self-hosted compiler written in Eskiu, editor extensions, docs and tests |
+| [gpu](https://github.com/eskiu-lang/gpu) | GPU compute and rendering over WebGPU (Metal, Vulkan, DirectX 12), with windows and input over SDL3 |
 | [homebrew-eskiu](https://github.com/eskiu-lang/homebrew-eskiu) | The Homebrew tap |
 
 ## Tools
