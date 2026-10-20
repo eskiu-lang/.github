@@ -49,7 +49,9 @@ brew install eskiu-lang/eskiu/eskiu                   # Homebrew
 ```
 
 Windows x86-64 builds are on the [releases page](https://github.com/eskiu-lang/eskiu/releases).
-The compiler cross-compiles to 64-bit and 32-bit ARM and x86, including bare-metal targets.
+The compiler cross-compiles to 64-bit and 32-bit ARM and x86, WebAssembly (emscripten and
+WASI), iOS and Android, and bare-metal targets, and writes static and shared libraries for
+an app's own build.
 
 ## Repositories
 
