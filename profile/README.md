@@ -56,8 +56,21 @@ The compiler cross-compiles to 64-bit and 32-bit ARM and x86, including bare-met
 | Repository | What it holds |
 |---|---|
 | [eskiu](https://github.com/eskiu-lang/eskiu) | The compiler, the standard library, the self-hosted compiler written in Eskiu, editor extensions, docs and tests |
-| [gpu](https://github.com/eskiu-lang/gpu) | GPU compute and rendering over WebGPU (Metal, Vulkan, DirectX 12), with windows and input over SDL3 |
 | [homebrew-eskiu](https://github.com/eskiu-lang/homebrew-eskiu) | The Homebrew tap |
+
+## Packages
+
+Each package is added with `eskiuc add NAME --git https://github.com/eskiu-lang/NAME --rev v0.1.0`.
+
+| Package | What it does |
+|---|---|
+| [gpu](https://github.com/eskiu-lang/gpu) | GPU compute and rendering over WebGPU (Metal, Vulkan, DirectX 12), glTF and OBJ models with PBR, windows and input over SDL3, and machine learning: Llama inference from GGUF and safetensors (Llama 2 7B at 45 tokens per second on an M4 Pro) and training |
+| [onnx](https://github.com/eskiu-lang/onnx) | ONNX Runtime inference on the CPU, Core ML and WebGPU |
+| [tflite](https://github.com/eskiu-lang/tflite) | TensorFlow Lite inference with the XNNPACK, GPU and Core ML delegates |
+| [compress](https://github.com/eskiu-lang/compress) | Deflate, zlib, gzip and zip, written in Eskiu |
+| [audio](https://github.com/eskiu-lang/audio) | WAV files, a mixer and sound output over SDL3 |
+| [font](https://github.com/eskiu-lang/font) | TrueType fonts: glyph rendering, text layout and atlases |
+| [nds](https://github.com/eskiu-lang/nds) | Nintendo DS file formats: ROMs, NARC archives, SDAT sound, 2D graphics and 3D textures |
 
 ## Tools
 
