@@ -87,9 +87,9 @@ for JetBrains IDEs.
 ## In production
 
 [ReactVision](https://reactvision.xyz) runs Eskiu in ViroReact: rendering modules moved from
-C++ use about 85% less memory, and the web AR tracker (tinyvio) and on-device object detection
-run on Eskiu engines that compute the same bits as the C++ they replaced
-([case study](https://eskiu-lang.org/case-study-reactvision.html)). For fun, Eskiu also runs an
+C++ use about 85% less memory, the web AR tracker (tinyvio) runs on an Eskiu engine that
+computes the same bits as the C++ it replaced, and on-device object detection runs on one Eskiu
+core for iOS and Android ([case study](https://eskiu-lang.org/case-study-reactvision.html)). For fun, Eskiu also runs an
 AR demo on the Nintendo 3DS ([case study](https://eskiu-lang.org/case-study-3ds.html)).
 
 ## Contributing
