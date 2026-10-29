@@ -62,7 +62,8 @@ an app's own build.
 
 ## Packages
 
-Each package is added with `eskiuc add NAME --git https://github.com/eskiu-lang/NAME --rev v0.1.0`.
+Each package is added with `eskiuc add NAME --git https://github.com/eskiu-lang/REPO --rev TAG`, at the
+tag its README gives.
 
 | Package | What it does |
 |---|---|
@@ -70,11 +71,32 @@ Each package is added with `eskiuc add NAME --git https://github.com/eskiu-lang/
 | [onnx](https://github.com/eskiu-lang/onnx) | ONNX Runtime inference on the CPU, Core ML, NNAPI and WebGPU |
 | [tflite](https://github.com/eskiu-lang/tflite) | TensorFlow Lite inference with the XNNPACK, GPU and Core ML delegates |
 | [compress](https://github.com/eskiu-lang/compress) | Deflate, zlib, gzip and zip, written in Eskiu |
-| [audio](https://github.com/eskiu-lang/audio) | WAV files, a mixer and sound output over SDL3 |
+| [audio](https://github.com/eskiu-lang/audio) | WAV files, a mixer with gapless playlists, and sound output: SDL3 on the desktop, RemoteIO and AAudio on iOS and Android, where MP3, AAC and FLAC decode through the system |
 | [font](https://github.com/eskiu-lang/font) | TrueType fonts: glyph rendering, text layout and atlases |
 | [jni](https://github.com/eskiu-lang/jni) | Native methods for Android and the JVM, written in Eskiu with no C glue |
 | [nds](https://github.com/eskiu-lang/nds) | Nintendo DS file formats: ROMs, NARC archives, SDAT sound, 2D graphics and 3D textures |
 | vision (private for now) | Corners, optical flow, multi-view geometry and planes in pure Eskiu, from ReactVision's tinyvio; it opens together with tinyvio |
+
+## Apps
+
+[ui](https://github.com/eskiu-lang/ui) makes native apps for iOS, Android, macOS, Linux, Windows
+and the web from one Eskiu codebase: components drawn by each platform's own views, signals,
+navigation, a kit of themed components, and the `ui` tool that builds, reloads and ships them
+to the stores. Packages bring device services and drawing to a ui app:
+
+| Package | What it does |
+|---|---|
+| [ui-location](https://github.com/eskiu-lang/ui-location) | Where the device is |
+| [ui-notifications](https://github.com/eskiu-lang/ui-notifications) | Local notifications, shown also with the app closed |
+| [ui-camera](https://github.com/eskiu-lang/ui-camera) | Photos from the library and the camera, and a live camera view |
+| [ui-barcode](https://github.com/eskiu-lang/ui-barcode) | QR codes and barcodes read live from the camera |
+| [ui-pedometer](https://github.com/eskiu-lang/ui-pedometer) | Steps walked, live and between two times |
+| [ui-securestore](https://github.com/eskiu-lang/ui-securestore) | Small secrets in the Keychain and the Android Keystore |
+| [ui-svg](https://github.com/eskiu-lang/ui-svg) | SVG drawings, tinted by the style's color |
+| [ui-canvas](https://github.com/eskiu-lang/ui-canvas) | A 2D canvas drawn every frame, for sprites and pixel art |
+
+[ui-starter](https://github.com/eskiu-lang/ui-starter) is an app to start from, and
+[ui-package-template](https://github.com/eskiu-lang/ui-package-template) a package to start from.
 
 ## Tools
 
