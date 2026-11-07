@@ -63,15 +63,17 @@ an app's own build.
 ## Packages
 
 Each package is added with `eskiuc add NAME --git https://github.com/eskiu-lang/REPO --rev TAG`, at the
-tag its README gives.
+tag its README gives. Every package documents its whole API in `docs/api.md`.
 
 | Package | What it does |
 |---|---|
-| [gpu](https://github.com/eskiu-lang/gpu) | GPU compute and rendering over WebGPU (Metal, Vulkan, DirectX 12), glTF and OBJ models with PBR, windows and input over SDL3, and machine learning: Llama inference from GGUF and safetensors (Llama 2 7B at 45 tokens per second on an M4 Pro) and training |
-| [onnx](https://github.com/eskiu-lang/onnx) | ONNX Runtime inference on the CPU, Core ML, NNAPI and WebGPU |
+| [gpu](https://github.com/eskiu-lang/gpu) | GPU compute and rendering over WebGPU (Metal, Vulkan, DirectX 12, and the browser), glTF and OBJ models with PBR, morph targets, image-based lighting and shadows, render targets, cube maps and compressed textures, camera and video frames from YUV, windows and input over SDL3, and machine learning: Llama inference from GGUF and safetensors (Llama 2 7B at 45 tokens per second on an M4 Pro) and training |
+| [scene](https://github.com/eskiu-lang/scene) | A scene graph and material renderer on gpu: Constant, Lambert, Phong, Blinn and PBR materials, ambient, directional, point and spot lights, HDR with tone mapping and bloom, skyboxes and shadows |
+| [onnx](https://github.com/eskiu-lang/onnx) | ONNX Runtime inference on the CPU, Core ML, NNAPI and WebGPU, with image resizing that matches Pillow and OpenCV byte for byte and SSD detection helpers |
 | [tflite](https://github.com/eskiu-lang/tflite) | TensorFlow Lite inference with the XNNPACK, GPU and Core ML delegates |
 | [compress](https://github.com/eskiu-lang/compress) | Deflate, zlib, gzip and zip, written in Eskiu |
-| [audio](https://github.com/eskiu-lang/audio) | WAV files, a mixer with gapless playlists, and sound output: SDL3 on the desktop, RemoteIO and AAudio on iOS and Android, where MP3, AAC and FLAC decode through the system |
+| [yaml](https://github.com/eskiu-lang/yaml) | YAML configuration files read into the standard library's JSON tree, written in Eskiu |
+| [audio](https://github.com/eskiu-lang/audio) | WAV files, a mixer with buses, fades and gapless playlists, and sound output: SDL3 on the desktop, RemoteIO and AAudio on iOS and Android, where MP3, AAC and FLAC decode through the system |
 | [font](https://github.com/eskiu-lang/font) | TrueType fonts: glyph rendering, text layout and atlases |
 | [jni](https://github.com/eskiu-lang/jni) | Native methods for Android and the JVM, written in Eskiu with no C glue |
 | [nds](https://github.com/eskiu-lang/nds) | Nintendo DS file formats: ROMs, NARC archives, SDAT sound, 2D graphics and 3D textures |
@@ -88,7 +90,9 @@ to the stores. Packages bring device services and drawing to a ui app:
 |---|---|
 | [ui-location](https://github.com/eskiu-lang/ui-location) | Where the device is |
 | [ui-notifications](https://github.com/eskiu-lang/ui-notifications) | Local notifications, shown also with the app closed |
-| [ui-camera](https://github.com/eskiu-lang/ui-camera) | Photos from the library and the camera, and a live camera view |
+| [ui-camera](https://github.com/eskiu-lang/ui-camera) | Photos from the library and the camera, a live camera view, and its frames handed to Eskiu |
+| [video](https://github.com/eskiu-lang/video) | Video playback with the platform's player, and the decoded frames handed to Eskiu |
+| [ar](https://github.com/eskiu-lang/ar) | ARKit and ARCore sessions: camera pose, planes, anchors, hit tests, light and depth, with the camera image for gpu to draw |
 | [ui-barcode](https://github.com/eskiu-lang/ui-barcode) | QR codes and barcodes read live from the camera |
 | [ui-pedometer](https://github.com/eskiu-lang/ui-pedometer) | Steps walked, live and between two times |
 | [ui-securestore](https://github.com/eskiu-lang/ui-securestore) | Small secrets in the Keychain and the Android Keystore |
