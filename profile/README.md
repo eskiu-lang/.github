@@ -92,7 +92,7 @@ to the stores. Packages bring device services and drawing to a ui app:
 | [ui-notifications](https://github.com/eskiu-lang/ui-notifications) | Local notifications, shown also with the app closed |
 | [ui-camera](https://github.com/eskiu-lang/ui-camera) | Photos from the library and the camera, a live camera view, and its frames handed to Eskiu |
 | [video](https://github.com/eskiu-lang/video) | Video playback with the platform's player, and the decoded frames handed to Eskiu |
-| [ar](https://github.com/eskiu-lang/ar) | ARKit and ARCore sessions: camera pose, planes, anchors, hit tests, light and depth, with the camera image for gpu to draw |
+| [ar](https://github.com/eskiu-lang/ar) | ARKit, ARCore and WebXR sessions: camera pose, planes, anchors, hit tests, image targets, light and depth, with the camera image for gpu to draw |
 | [ui-barcode](https://github.com/eskiu-lang/ui-barcode) | QR codes and barcodes read live from the camera |
 | [ui-pedometer](https://github.com/eskiu-lang/ui-pedometer) | Steps walked, live and between two times |
 | [ui-securestore](https://github.com/eskiu-lang/ui-securestore) | Small secrets in the Keychain and the Android Keystore |
