@@ -48,6 +48,8 @@ curl -fsSL https://eskiu-lang.org/install.sh | sh     # macOS (Apple Silicon), L
 brew install eskiu-lang/eskiu/eskiu                   # Homebrew
 ```
 
+`sh -s -- --with-ui` after the install script also installs the `ui` tool.
+
 Windows x86-64 builds are on the [releases page](https://github.com/eskiu-lang/eskiu/releases).
 The compiler cross-compiles to 64-bit and 32-bit ARM and x86, WebAssembly (emscripten and
 WASI), iOS and Android, and bare-metal targets, and writes static and shared libraries for
@@ -109,6 +111,13 @@ manager with git and path dependencies (`eskiuc new`, `add`, `build`, `test`). E
 comes as an extension for VS Code and the editors built on it
 ([Open VSX](https://open-vsx.org/extension/doranteseduardo/eskiu-language)) and through LSP4IJ
 for JetBrains IDEs.
+
+Coding agents build, drive and test apps with `ui agent` and `ui test`, which answer in JSON
+([Eskiu for agents](https://eskiu-lang.org/agents.html), [llms.txt](https://eskiu-lang.org/llms.txt)).
+The [`ghcr.io/eskiu-lang/agent`](https://github.com/orgs/eskiu-lang/packages/container/package/agent)
+image has the compiler, the ui tool, emscripten and a headless Chrome, and the Eskiu MCP
+server (`https://eskiu-mcp-9450.orvex.cloud/mcp`) searches the sources and docs and runs code
+and ui apps for agents without a computer of their own.
 
 ## In production
 
