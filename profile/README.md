@@ -69,16 +69,17 @@ tag its README gives. Every package documents its whole API in `docs/api.md`.
 
 | Package | What it does |
 |---|---|
-| [gpu](https://github.com/eskiu-lang/gpu) | GPU compute and rendering over WebGPU (Metal, Vulkan, DirectX 12, and the browser), glTF and OBJ models with PBR, morph targets, image-based lighting and shadows, render targets, cube maps and compressed textures, camera and video frames from YUV, windows and input over SDL3, and machine learning: Llama inference from GGUF and safetensors (Llama 2 7B at 45 tokens per second on an M4 Pro) and training |
+| [gpu](https://github.com/eskiu-lang/gpu) | GPU compute and rendering over WebGPU (Metal, Vulkan, DirectX 12, and the browser, with a WebGL2 fallback), glTF and OBJ models with PBR, morph targets, image-based lighting and shadows, render targets, cube maps and compressed textures, camera and video frames from YUV, windows, gamepads and touch over SDL3, and machine learning: Llama inference from GGUF and safetensors (Llama 2 7B at 45 tokens per second on an M4 Pro) and training |
 | [scene](https://github.com/eskiu-lang/scene) | A scene graph and material renderer on gpu: Constant, Lambert, Phong, Blinn and PBR materials, ambient, directional, point and spot lights, HDR with tone mapping and bloom, skyboxes and shadows |
 | [onnx](https://github.com/eskiu-lang/onnx) | ONNX Runtime inference on the CPU, Core ML, NNAPI and WebGPU, with image resizing that matches Pillow and OpenCV byte for byte and SSD detection helpers |
 | [tflite](https://github.com/eskiu-lang/tflite) | TensorFlow Lite inference with the XNNPACK, GPU and Core ML delegates |
 | [compress](https://github.com/eskiu-lang/compress) | Deflate, zlib, gzip and zip, written in Eskiu |
 | [yaml](https://github.com/eskiu-lang/yaml) | YAML configuration files read into the standard library's JSON tree, written in Eskiu |
-| [audio](https://github.com/eskiu-lang/audio) | WAV files, a mixer with buses, fades and gapless playlists, and sound output: SDL3 on the desktop, RemoteIO and AAudio on iOS and Android, where MP3, AAC and FLAC decode through the system |
+| [audio](https://github.com/eskiu-lang/audio) | WAV files, Ogg Vorbis on every platform, a mixer with buses, loop points, fades and gapless playlists, and sound output: SDL3 on the desktop, RemoteIO and AAudio on iOS and Android, where MP3, AAC and FLAC decode through the system |
 | [font](https://github.com/eskiu-lang/font) | TrueType fonts: glyph rendering, text layout and atlases |
 | [jni](https://github.com/eskiu-lang/jni) | Native methods for Android and the JVM, written in Eskiu with no C glue |
-| [nds](https://github.com/eskiu-lang/nds) | Nintendo DS file formats: ROMs, NARC archives, SDAT sound, 2D graphics and 3D textures |
+| [nds](https://github.com/eskiu-lang/nds) | Nintendo DS file formats: ROMs, NARC archives, SDAT sound, 2D graphics, 3D textures, and models, animations and SPL particles exported to glTF |
+| [quickjs](https://github.com/eskiu-lang/quickjs) | JavaScript in Eskiu programs through QuickJS, with prebuilt libraries for each platform |
 | vision (private for now) | Corners, optical flow, multi-view geometry and planes in pure Eskiu, from ReactVision's tinyvio; it opens together with tinyvio |
 
 ## Apps
@@ -86,7 +87,8 @@ tag its README gives. Every package documents its whole API in `docs/api.md`.
 [ui](https://github.com/eskiu-lang/ui) makes native apps for iOS, Android, macOS, Linux, Windows
 and the web from one Eskiu codebase: components drawn by each platform's own views, signals,
 navigation, a kit of themed components, and the `ui` tool that builds, reloads and ships them
-to the stores. Packages bring device services and drawing to a ui app:
+to the stores. `<ui/webapp>` also runs a web front end in the desktop's webview with the
+Eskiu program as its backend, as Tauri does for Rust. Packages bring device services and drawing to a ui app:
 
 | Package | What it does |
 |---|---|
