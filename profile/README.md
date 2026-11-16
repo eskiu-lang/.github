@@ -73,7 +73,9 @@ repository. A package is added by its git URL, at a tag:
 eskiuc add gpu --git https://github.com/eskiu-packages/gpu --rev v0.7.0
 ```
 
-The [package catalog](https://eskiu-lang.org/packages.html) lists them with their API.
+To publish one, tag a release and add it to the [package index](https://github.com/eskiu-lang/index)
+with a pull request. The [package catalog](https://eskiu-lang.org/packages.html) lists every
+package in the index.
 
 ## Tools
 
