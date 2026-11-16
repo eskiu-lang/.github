@@ -52,7 +52,7 @@ brew install eskiu-lang/eskiu/eskiu                   # Homebrew
 
 Windows x86-64 builds are on the [releases page](https://github.com/eskiu-lang/eskiu/releases).
 The compiler cross-compiles to 64-bit and 32-bit ARM and x86, WebAssembly (emscripten and
-WASI), iOS and Android, and bare-metal targets, and writes static and shared libraries for
+WASI), iOS, Android and visionOS, and bare-metal targets, and writes static and shared libraries for
 an app's own build.
 
 ## Repositories
@@ -70,7 +70,7 @@ tag its README gives. Every package documents its whole API in `docs/api.md`.
 | Package | What it does |
 |---|---|
 | [gpu](https://github.com/eskiu-lang/gpu) | GPU compute and rendering over WebGPU (Metal, Vulkan, DirectX 12, and the browser, with a WebGL2 fallback), glTF and OBJ models with PBR, morph targets, image-based lighting and shadows, render targets, cube maps and compressed textures, camera and video frames from YUV, windows, gamepads and touch over SDL3, and machine learning: Llama inference from GGUF and safetensors (Llama 2 7B at 45 tokens per second on an M4 Pro) and training |
-| [scene](https://github.com/eskiu-lang/scene) | A scene graph and material renderer on gpu: Constant, Lambert, Phong, Blinn and PBR materials, ambient, directional, point and spot lights, HDR with tone mapping and bloom, skyboxes and shadows |
+| [scene](https://github.com/eskiu-lang/scene) | A scene graph and material renderer on gpu: Constant, Lambert, Phong, Blinn and PBR materials, ambient, directional, point and spot lights, HDR with tone mapping and bloom, skyboxes and shadows, input, physics, animation, particles, and rendering for Meta Quest and Apple Vision Pro |
 | [onnx](https://github.com/eskiu-lang/onnx) | ONNX Runtime inference on the CPU, Core ML, NNAPI and WebGPU, with image resizing that matches Pillow and OpenCV byte for byte and SSD detection helpers |
 | [tflite](https://github.com/eskiu-lang/tflite) | TensorFlow Lite inference with the XNNPACK, GPU and Core ML delegates |
 | [compress](https://github.com/eskiu-lang/compress) | Deflate, zlib, gzip and zip, written in Eskiu |
@@ -96,7 +96,8 @@ Eskiu program as its backend, as Tauri does for Rust. Packages bring device serv
 | [ui-notifications](https://github.com/eskiu-lang/ui-notifications) | Local notifications, shown also with the app closed |
 | [ui-camera](https://github.com/eskiu-lang/ui-camera) | Photos from the library and the camera, a live camera view, and its frames handed to Eskiu |
 | [video](https://github.com/eskiu-lang/video) | Video playback with the platform's player, and the decoded frames handed to Eskiu |
-| [ar](https://github.com/eskiu-lang/ar) | ARKit, ARCore and WebXR sessions: camera pose, planes, anchors, hit tests, image targets, light and depth, with the camera image for gpu to draw |
+| [ar](https://github.com/eskiu-lang/ar) | ARKit, ARCore and WebXR sessions: camera pose, planes, anchors, hit tests, image targets, light and depth, meshes, faces and bodies, cloud and Earth anchors, with the camera image for gpu to draw |
+| [arscene](https://github.com/eskiu-lang/arscene) | An ar session drawn with scene, as ViroReact's AR navigator: the camera behind the scene, depth occlusion, tap to place, image markers and the world mesh |
 | [ui-barcode](https://github.com/eskiu-lang/ui-barcode) | QR codes and barcodes read live from the camera |
 | [ui-pedometer](https://github.com/eskiu-lang/ui-pedometer) | Steps walked, live and between two times |
 | [ui-securestore](https://github.com/eskiu-lang/ui-securestore) | Small secrets in the Keychain and the Android Keystore |
@@ -123,8 +124,9 @@ and ui apps for agents without a computer of their own.
 
 ## In production
 
-[ReactVision](https://reactvision.xyz) runs Eskiu in ViroReact: rendering modules moved from
-C++ use about 85% less memory, the web AR tracker (tinyvio) runs on an Eskiu engine that
+[ReactVision](https://reactvision.xyz) runs Eskiu in ViroReact and is replacing ViroReact's C++
+engine with one written in Eskiu, now in device testing on iOS, Android, Meta Quest and Apple
+Vision Pro with 14% of the native code. Rendering modules moved from C++ use about 85% less memory, the web AR tracker (tinyvio) runs on an Eskiu engine that
 computes the same bits as the C++ it replaced, and on-device object detection runs on one Eskiu
 core for iOS and Android ([case study](https://eskiu-lang.org/case-study-reactvision.html)). For fun, Eskiu also runs an
 AR demo on the Nintendo 3DS ([case study](https://eskiu-lang.org/case-study-3ds.html)).
