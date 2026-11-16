@@ -70,7 +70,7 @@ maintains (gpu, scene, ar, onnx, the ui framework and more) are in
 repository. A package is added by its git URL, at a tag:
 
 ```bash
-eskiuc add gpu --git https://github.com/eskiu-packages/gpu --rev v0.7.0
+eskiuc add gpu --git https://github.com/eskiu-packages/gpu --rev v0.7.1
 ```
 
 To publish one, tag a release and add it to the [package index](https://github.com/eskiu-lang/index)
